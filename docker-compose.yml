@@ -1,26 +1,18 @@
-<<<<<<< HEAD
-version: "3.9"
-
-services:
-  web:
-    build: .
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-=======
 services:
   django:
     build:
       context: ./django
       dockerfile: Dockerfile
+    container_name: django_app
+    ports:
+      - "8080:8080"
 
   nginx:
     image: nginx:alpine
+    container_name: nginx_proxy
     ports:
       - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - django
->>>>>>> 068853e (Organizando a aplicação para usar o nginx)
