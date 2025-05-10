@@ -27,8 +27,5 @@ COPY . /app/
 
 RUN python manage.py collectstatic --noinput
 
-# Expõe a porta usada pelo Django
-EXPOSE 8080
-
 # Comando padrão de inicialização
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]

@@ -1,0 +1,6 @@
+[OK] Certificado SSL de 'https://www.google.com' é válido até 2025-07-14 08:42:34 UTC - Dias para expirar: 66
+[OK] Certificado SSL de 'https://brasiliaambiental.df.gov.br/' é válido até 2025-10-10 23:59:59 UTC - Dias para expirar: 155
+[OK] Certificado SSL de 'https://ibram.df.gov.br/' é válido até 2025-10-08 23:59:59 UTC - Dias para expirar: 153
+[OK] Certificado SSL de 'https://onda.ibram.df.gov.br/portal/home/index.html' é válido até 2025-05-27 12:56:40 UTC - Dias para expirar: 18
+[OK] Certificado SSL de 'https://ondalab.ibram.df.gov.br/portal/home/index.html' é válido até 2025-05-27 12:56:40 UTC - Dias para expirar: 18
+[OK] Certificado SSL de 'https://www.ibram.df.gov.br/harpia/' é válido até 2025-10-08 23:59:59 UTC - Dias para expirar: 153

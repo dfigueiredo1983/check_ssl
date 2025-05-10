@@ -3,9 +3,15 @@ services:
     build:
       context: ./django
       dockerfile: Dockerfile
+    container_name: django_app
+    ports:
+      - "8080:8080"
 
   nginx:
-    image: nginx:alpine
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx_proxy
     ports:
       - "80:80"
     volumes:
