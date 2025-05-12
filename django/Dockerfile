@@ -28,4 +28,7 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Comando padrão de inicialização
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+
+# Rodando com gunicorn
+CMD ["gunicorn", "check_ssl.wsgi:application", "--bind", "0.0.0.0:8080", "--workers", "3"]

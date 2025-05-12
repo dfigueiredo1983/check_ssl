@@ -4,7 +4,9 @@ cffi==1.17.1
 charset-normalizer==3.4.2
 cryptography==44.0.3
 Django==5.2.1
+gunicorn==23.0.0
 idna==3.10
+packaging==25.0
 pycparser==2.22
 pyOpenSSL==25.0.0
 requests==2.32.3

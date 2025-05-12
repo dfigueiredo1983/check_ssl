@@ -23,7 +23,11 @@ class ListSSLView(TemplateView):
                  'https://ibram.df.gov.br/',
                  'https://onda.ibram.df.gov.br/portal/home/index.html',
                  'https://ondalab.ibram.df.gov.br/portal/home/index.html',
-                 'https://www.ibram.df.gov.br/harpia/'
+                 'https://www.ibram.df.gov.br/harpia/',
+                 'https://datastore.ibram.df.gov.br',
+                 'https://portal.ibram.df.gov.br',
+                 'https://server.ibram.df.gov.br',
+                 'https://intranet.ibram.df.gov.br',
                 ]
         
         list_of_certificates = []

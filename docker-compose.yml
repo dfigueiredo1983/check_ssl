@@ -1,19 +1,24 @@
+version: '3.9'
+
 services:
   django:
     build:
       context: ./django
       dockerfile: Dockerfile
     container_name: django_app
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080" # expõe internamente para outros containers
+    # ports:
+    #   - "8080:8080"
 
   nginx:
     build: 
       context: ./nginx
       dockerfile: Dockerfile
+    restart: always
     container_name: nginx_proxy
     ports:
-      - "80:80"
+      - "8080:80" # porta 80 do host -> porta 80 do container nginx
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
