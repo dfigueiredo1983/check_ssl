@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% comment %} <ul>
-        {% for site in certificados %}
-            <li>{{ site }}</li>
-        {% endfor %}
-    </ul> {% endcomment %}
-
+    {% comment %} LISTAGEM DE URLS - IP 10.230.81.124 {% endcomment %}
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,14 +11,55 @@
                 <th>Dias para expirar</th>
             </tr>
         </thead>
+        
+        <h2>LISTAGEM DE URLS - IP 10.230.81.124</h2>
         <tbody>
-            {% for certificado in certificados %}
+            {% for certificado in certificados_124 %}
                 <tr>
                     <td>{{ certificado.status }}</td>
                     <td>
-                        <a href="{{ certificado.link }}">
+                        <a href="{% if 'http' in certificado.link %}
+                                    {{ certificado.link }}
+                                 {% else %}
+                                    http://{{ certificado.link }}
+                                 {% endif %}" 
+                        target="_blank">
                             {{ certificado.link }}
-                        </a>                        
+                        </a>
+                    </td>
+                    <td>{{ certificado.validade }}</td>
+                    <td>{{ certificado.dias_expirar }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+
+    {% comment %} LISTAGEM DE URLS - IP 10.230.81.125 {% endcomment %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Link</th>
+                <th>Validade</th>
+                <th>Dias para expirar</th>
+            </tr>
+        </thead>
+        <h2> LISTAGEM DE URLS - IP 10.230.81.125</h2>
+        <tbody>
+            {% for certificado in certificados_125 %}
+                <tr>
+                    <td>{{ certificado.status }}</td>
+                    <td>
+                        <a href="{% if 'http' in certificado.link %}
+                                    {{ certificado.link }}
+                                 {% else %}
+                                    http://{{ certificado.link }}
+                                 {% endif %}" 
+                        target="_blank">
+                            {{ certificado.link }}
+                        </a>
                     </td>
                     <td>{{ certificado.validade }}</td>
                     <td>{{ certificado.dias_expirar }}</td>
