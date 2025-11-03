@@ -1,10 +1,7 @@
-# version: '3.9'
-
 services:
   django:
     build:
       context: ./django
-      dockerfile: Dockerfile
     container_name: django_app
     volumes:
       - static_volume:/app/staticfiles
@@ -13,10 +10,8 @@ services:
       - "8080" # expõe internamente para outros containers
 
   nginx:
-    build: 
+    build:
       context: ./nginx
-      dockerfile: Dockerfile
-    restart: always
     container_name: nginx_proxy
     ports:
       - "8080:8080" # porta 80 do host -> porta 8080 do container nginx
@@ -30,4 +25,3 @@ services:
 volumes:
   static_volume:
   media_volume:
-  postgres_data:
