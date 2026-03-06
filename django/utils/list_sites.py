@@ -8,6 +8,7 @@ list_sites_124 = [
     'harpia-hml.ibram.df.gov.br',
     'harpia.ibram.df.gov.br',
     'onda-homolog.ibram.df.gov.br',
+
 ]
 
 
@@ -16,6 +17,7 @@ list_sites_125 = [
     'imageserver.ibram.df.gov.br',
     'intranet.ibram.df.gov.br',
     'onda.ibram.df.gov.br',
+    'servicos.ibram.df.gov.br',
     'ondalab.ibram.df.gov.br',
     'portal.ibram.df.gov.br',
     'server.ibram.df.gov.br',

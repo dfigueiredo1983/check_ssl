@@ -13,8 +13,12 @@ class ListSSLView(TemplateView):
         list_of_certificates_124 = []
         list_of_certificates_125 = []
 
+        print(list_sites_124)
+        print(list_sites_125)
+
         for site_124 in list_sites_124:
             item = verificar_certificado_ssl(site_124)
+            print(item)
 
             try:
                 partes = item.split(" - ")
@@ -31,11 +35,18 @@ class ListSSLView(TemplateView):
                 })
 
             except Exception as e:
-                list_of_certificates_124.append({'erro': f'Erro ao processar o item {item}'})
+                # list_of_certificates_124.append({'erro': f'Erro ao processar o item {item}'})
+                list_of_certificates_124.append({
+                    'status': 'Erro',
+                    'link': link,
+                    'validade': 'Sem validade',
+                    'dias_expirar': '',
+                })
 
 
         for site_125 in list_sites_125:
             item = verificar_certificado_ssl(site_125)
+            print(item)
 
             try:
                 partes = item.split(" - ")
@@ -52,11 +63,19 @@ class ListSSLView(TemplateView):
                 })
 
             except Exception as e:
-                list_of_certificates_124.append({'erro': f'Erro ao processar o item {item}'})
+                # list_of_certificates_124.append({'erro': f'Erro ao processar o item {item}'})
+                list_of_certificates_125.append({
+                    'status': 'Erro',
+                    'link': link,
+                    'validade': 'Sem validade',
+                    'dias_expirar': '',
+                })
 
 
         context['certificados_124'] = list_of_certificates_124
         context['certificados_125'] = list_of_certificates_125
+
+        print('context: ', context)
         return context
 
 
