@@ -1,12 +1,3 @@
-# from django.views.generic import TemplateView
-
-# class Certificate_SSL_View(TemplateView):
-#     pass
-    
-#     # template_name = 'ssl.html'
-
-
-from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 from utils.check_ssl import verificar_certificado_ssl
@@ -21,9 +12,6 @@ class ListSSLView(TemplateView):
     
         list_of_certificates_124 = []
         list_of_certificates_125 = []
-
-        # for site in sites:
-        #     list_of_certificates.append(verificar_certificado_ssl(site))
 
         for site_124 in list_sites_124:
             item = verificar_certificado_ssl(site_124)
